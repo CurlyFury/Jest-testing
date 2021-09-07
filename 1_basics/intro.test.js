@@ -1,4 +1,4 @@
-const { sum } = require('./intro')
+const { sum, naviteNull } = require('./intro')
 
 describe('Sum should return ', () => {
 	test('Sum of two values', () => {
@@ -15,6 +15,17 @@ describe('Sum should return ', () => {
 
 	test('Correct sum of two floats', () => {
 		expect(sum(0.1, 0.2)).toBeCloseTo(0.3)
+	})
+})
+
+describe('Native null function ', () => {
+	test('should return false value null', () => {
+		expect(naviteNull()).toBe(null)
+		expect(naviteNull()).toBeNull()
+		expect(naviteNull()).toBeFalsy() //undefined, null, 0, ''
+		expect(naviteNull()).toBeDefined()
+		expect(naviteNull()).not.toBeTruthy()
+		expect(naviteNull()).not.toBeUndefined()
 	})
 })
 
